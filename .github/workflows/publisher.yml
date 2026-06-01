@@ -1,0 +1,49 @@
+name: IG Scheduler
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'   # 每 15 分鐘
+  workflow_dispatch:           # 也可手動觸發
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Refresh IG Token
+        id: refresh
+        run: |
+          RESPONSE=$(curl -s "https://graph.instagram.com/refresh_access_token?grant_type=ig_refresh_token&access_token=${{ secrets.IG_ACCESS_TOKEN }}")
+          NEW_TOKEN=$(echo "$RESPONSE" | python3 -c "import sys,json; d=json.load(sys.stdin); print(d.get('access_token',''))" 2>/dev/null || echo "")
+          if [ -n "$NEW_TOKEN" ] && [ "$NEW_TOKEN" != "None" ]; then
+            echo "::add-mask::$NEW_TOKEN"
+            echo "token=$NEW_TOKEN" >> $GITHUB_OUTPUT
+            echo "refreshed=true" >> $GITHUB_OUTPUT
+          else
+            echo "token=${{ secrets.IG_ACCESS_TOKEN }}" >> $GITHUB_OUTPUT
+            echo "refreshed=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Update Token Secret
+        if: steps.refresh.outputs.refreshed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT }}
+        run: |
+          gh secret set IG_ACCESS_TOKEN --body "${{ steps.refresh.outputs.token }}" --repo ${{ github.repository }}
+
+      - name: Publish Due Posts
+        env:
+          IG_TOKEN:   ${{ steps.refresh.outputs.token }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+        run: python3 .github/scripts/publisher.py
+
+      - name: Commit Updated schedule.json
+        run: |
+          git config user.name  "ig-scheduler[bot]"
+          git config user.email "ig-scheduler[bot]@users.noreply.github.com"
+          git add schedule.json
+          git diff --staged --quiet || (git commit -m "📅 update schedule [skip ci]" && git push)
