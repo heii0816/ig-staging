@@ -1,3 +1,15 @@
 {
-  "posts": []
+  "posts": [
+    {
+      "id": "post_1780283611",
+      "scheduled_time": "2026-06-01T11:30:00+08:00",
+      "caption": "【排程測試】\n\n這是一則端對端測試貼文，確認 GitHub Actions 自動發布流程是否正常運作。\n\n#測試 #hsinyikung",
+      "images": [
+        "https://raw.githubusercontent.com/heii0816/ig-staging/main/ig_1780283611_00.jpg",
+        "https://raw.githubusercontent.com/heii0816/ig-staging/main/ig_1780283611_01.jpg"
+      ],
+      "status": "pending",
+      "created_at": "2026-06-01T11:13:31.515409+08:00"
+    }
+  ]
 }
