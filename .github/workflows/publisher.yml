@@ -4,6 +4,9 @@ on:
   schedule:
     - cron: '*/15 * * * *'   # 每 15 分鐘
   workflow_dispatch:           # 也可手動觸發
+  push:
+    paths:
+      - 'schedule.json'        # 每次排程新貼文推上來就立刻檢查
 
 jobs:
   publish:
