@@ -241,6 +241,22 @@
       ],
       "status": "pending",
       "created_at": "2026-06-05T13:53:18.467306+08:00"
+    },
+    {
+      "id": "post_1780638896",
+      "scheduled_time": "2026-06-16T12:30:00+08:00",
+      "caption": "從小到大，我的日記裡都是靜思小語。\n\n不是因為不想寫。是翻開來腦袋空白，不知道從哪裡開始。有些人可以在本子上畫漫畫、填滿整頁，我沒辦法，就只好抄。\n\n那時候不知道為什麼做不到。現在想想，可能是我不太知道怎麼觀察自己。不確定什麼叫「值得記下來的感受」。\n\n後來才發現，是我把日記的定義設太窄了。\n\n以為一定要有感悟才能動筆。要有有趣的事才算值得記錄。沒有這兩樣，好像就不算真正在寫日記。\n\n但這些規定，從頭到尾都是我自己加上去的。\n\n現在在練的，就是把今天腦袋裡有的東西倒出來。不需要漂亮，不需要深刻。放到紙上這個動作，本身就夠了。\n\n你有在寫日記嗎？",
+      "images": [
+        "https://raw.githubusercontent.com/heii0816/ig-staging/main/ig_1780638896_00.jpg",
+        "https://raw.githubusercontent.com/heii0816/ig-staging/main/ig_1780638896_01.jpg",
+        "https://raw.githubusercontent.com/heii0816/ig-staging/main/ig_1780638896_02.jpg",
+        "https://raw.githubusercontent.com/heii0816/ig-staging/main/ig_1780638896_03.jpg",
+        "https://raw.githubusercontent.com/heii0816/ig-staging/main/ig_1780638896_04.jpg",
+        "https://raw.githubusercontent.com/heii0816/ig-staging/main/ig_1780638896_05.jpg",
+        "https://raw.githubusercontent.com/heii0816/ig-staging/main/ig_1780638896_06.jpg"
+      ],
+      "status": "pending",
+      "created_at": "2026-06-05T13:54:56.105788+08:00"
     }
   ]
 }
