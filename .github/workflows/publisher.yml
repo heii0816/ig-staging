@@ -1,12 +1,10 @@
 name: IG Scheduler
 
 on:
-  schedule:
-    - cron: '*/15 * * * *'   # 每 15 分鐘
-  workflow_dispatch:           # 也可手動觸發
+  workflow_dispatch:           # 手動觸發
   push:
     paths:
-      - 'schedule.json'        # 每次排程新貼文推上來就立刻檢查
+      - 'schedule.json'        # 每次排程新貼文推上來就刷新 token
 
 jobs:
   publish:
@@ -40,15 +38,10 @@ jobs:
         run: |
           gh secret set IG_ACCESS_TOKEN --body "${{ steps.refresh.outputs.token }}" --repo ${{ github.repository }}
 
-      - name: Publish Due Posts
-        env:
-          IG_TOKEN:   ${{ steps.refresh.outputs.token }}
-          IG_USER_ID: ${{ secrets.IG_USER_ID }}
-        run: python3 .github/scripts/publisher.py
-
-      - name: Commit Updated schedule.json
+      - name: Sync Token to Cloudflare KV
         run: |
-          git config user.name  "ig-scheduler[bot]"
-          git config user.email "ig-scheduler[bot]@users.noreply.github.com"
-          git add schedule.json
-          git diff --staged --quiet || (git commit -m "📅 update schedule [skip ci]" && git push)
+          curl -s -X PUT \
+            "https://api.cloudflare.com/client/v4/accounts/${{ secrets.CF_ACCOUNT_ID }}/storage/kv/namespaces/${{ secrets.CF_KV_NAMESPACE_ID }}/values/ig_access_token" \
+            -H "Authorization: Bearer ${{ secrets.CF_API_TOKEN }}" \
+            -H "Content-Type: text/plain" \
+            --data "${{ steps.refresh.outputs.token }}" | python3 -c "import sys,json; d=json.load(sys.stdin); print('✓ CF KV 同步成功' if d.get('success') else f'✗ 同步失敗: {d}')"
