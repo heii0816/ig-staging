@@ -534,8 +534,10 @@
         "https://raw.githubusercontent.com/heii0816/ig-staging/main/ig_1781189454_06.jpg",
         "https://raw.githubusercontent.com/heii0816/ig-staging/main/ig_1781189454_07.jpg"
       ],
-      "status": "pending",
-      "created_at": "2026-06-11T22:50:54.962106+08:00"
+      "status": "published",
+      "created_at": "2026-06-11T22:50:54.962106+08:00",
+      "published_at": "2026-06-11T23:11:51.686+08:00",
+      "ig_media_id": "18395365843081793"
     }
   ]
 }
