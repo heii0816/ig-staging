@@ -268,7 +268,7 @@
         "https://raw.githubusercontent.com/heii0816/ig-staging/main/ig_1780639043_00.jpg",
         "https://raw.githubusercontent.com/heii0816/ig-staging/main/ig_1780639043_01.jpg"
       ],
-      "status": "pending",
+      "status": "cancelled",
       "created_at": "2026-06-05T13:57:23.031306+08:00"
     },
     {
@@ -412,7 +412,7 @@
         "https://raw.githubusercontent.com/heii0816/ig-staging/main/ig_1781186980_04.jpg",
         "https://raw.githubusercontent.com/heii0816/ig-staging/main/ig_1781186980_05.jpg"
       ],
-      "status": "pending",
+      "status": "cancelled",
       "created_at": "2026-06-11T22:09:40.845236+08:00"
     },
     {
@@ -446,7 +446,7 @@
         "https://raw.githubusercontent.com/heii0816/ig-staging/main/ig_1781187667_06.jpg",
         "https://raw.githubusercontent.com/heii0816/ig-staging/main/ig_1781187667_07.jpg"
       ],
-      "status": "pending",
+      "status": "cancelled",
       "created_at": "2026-06-11T22:21:07.850659+08:00"
     },
     {
@@ -457,7 +457,7 @@
         "https://raw.githubusercontent.com/heii0816/ig-staging/main/ig_1781188084_00.jpg",
         "https://raw.githubusercontent.com/heii0816/ig-staging/main/ig_1781188084_01.jpg"
       ],
-      "status": "pending",
+      "status": "cancelled",
       "created_at": "2026-06-11T22:28:04.074117+08:00"
     }
   ]
