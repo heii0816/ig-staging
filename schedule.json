@@ -576,6 +576,22 @@
       ],
       "status": "pending",
       "created_at": "2026-06-16T18:41:39.352116+08:00"
+    },
+    {
+      "id": "post_1782042840",
+      "scheduled_time": "2026-06-25T20:00:00+08:00",
+      "caption": "一直想寫日記 但覺得麻煩\n寫了想分享 但懶得排版\n排版完 也懶得切裝置上架\n這些理由我用了很久\n這一個月我把它們一個個解掉了\n做了療癒日記、自動排程、LINE Bot\n再也沒有藉口讓我繼續拖延",
+      "images": [
+        "https://raw.githubusercontent.com/heii0816/ig-staging/main/ig_1782042840_00.jpg",
+        "https://raw.githubusercontent.com/heii0816/ig-staging/main/ig_1782042840_01.jpg",
+        "https://raw.githubusercontent.com/heii0816/ig-staging/main/ig_1782042840_02.jpg",
+        "https://raw.githubusercontent.com/heii0816/ig-staging/main/ig_1782042840_03.jpg",
+        "https://raw.githubusercontent.com/heii0816/ig-staging/main/ig_1782042840_04.jpg",
+        "https://raw.githubusercontent.com/heii0816/ig-staging/main/ig_1782042840_05.jpg",
+        "https://raw.githubusercontent.com/heii0816/ig-staging/main/ig_1782042840_06.jpg"
+      ],
+      "status": "pending",
+      "created_at": "2026-06-21T19:54:00.409608+08:00"
     }
   ]
 }
