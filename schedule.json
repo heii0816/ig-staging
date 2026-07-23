@@ -713,9 +713,11 @@
         "https://raw.githubusercontent.com/heii0816/ig-staging/main/ig_1783245983_05.jpg",
         "https://raw.githubusercontent.com/heii0816/ig-staging/main/ig_1783245983_06.jpg"
       ],
-      "status": "pending",
+      "status": "published",
       "created_at": "2026-07-05T18:06:23.302624+08:00",
-      "source_folder": "0718在摸索中，仍然可以快樂"
+      "source_folder": "0718在摸索中，仍然可以快樂",
+      "published_at": "2026-07-18T12:00:57.480+08:00",
+      "ig_media_id": "17973143930912315"
     },
     {
       "id": "post_1783247877",
